@@ -1,0 +1,8 @@
+Metadata-Version: 2.2
+Name: pyguardian_lite
+Version: 1.0
+Requires-Dist: pyyaml
+Requires-Dist: flake8
+Requires-Dist: pep8-naming
+Requires-Dist: flake8-bandit
+Dynamic: requires-dist

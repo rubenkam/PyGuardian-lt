@@ -1,0 +1,1557 @@
+meta:
+  version: 1.0
+  author: "PipeGuardian"
+  policy: "Developers standards"
+  date: "2025-01-07"
+  description: "Complete list of all possible coding checks"
+  blocklist: false
+
+#CODE CONVENTIONS pep8-naming
+naming_conventions:
+  - name: "Class Naming Convention"
+    description: "Class names should use CapWords convention. (Also known as CamelCase)"
+    type: "class-names-capwords"
+    enabled: true  
+    error_code: "N801"
+    set.severity: "critical"  
+
+  - name: "Function Naming Convention"
+    description: "Function names should be lowercase."
+    type: "function-names-lowercase"
+    enabled: true
+    error_code: "N802"
+    set.severity: "hint"
+
+  - name: "Function Argument Naming Convention"
+    description: "Function argument (parameter) names should be lowercase."
+    type: "function-arguments-lowercase"
+    enabled: true
+    error_code: "N803"
+    severity: "error"
+
+  - name: "Classmethod Argument Name"
+    description: "First argument of a classmethod should be named 'cls'."
+    type: "classmethod-argument-named-cls"
+    enabled: true
+    error_code: "N804"
+    severity: "error"
+
+  - name: "Method Argument Name"
+    description: "First argument of a method should be named 'self'."
+    type: "method-argument-named-self"
+    enabled: true
+    error_code: "N805"
+    severity: "error"
+
+  - name: "Variable Naming Convention in Functions"
+    description: "Variables inside a function should be lowercase."
+    type: "variables-in-function-lowercase"
+    enabled: true
+    error_code: "N806"
+    set.severity: "warning"
+
+  - name: "Function Naming Double Underscore"
+    description: "Function names should not start and end with '__'."
+    type: "function-name-double-underscore"
+    enabled: true
+    error_code: "N807"
+    severity: "error"
+
+  - name: "Constant Naming Convention for Imports"
+    description: "Constants imported should remain in uppercase format."
+    type: "constant-import-as-uppercase"
+    enabled: true
+    error_code: "N811"
+    severity: "error"
+
+  - name: "Lowercase Naming Convention for Imports"
+    description: "Lowercase variables imported should remain lowercase."
+    type: "lowercase-import-as-lowercase"
+    enabled: true
+    error_code: "N812"
+    severity: "error"
+
+  - name: "CamelCase Import Naming as Lowercase"
+    description: "CamelCase imports should not be renamed to lowercase."
+    type: "camelcase-import-as-lowercase"
+    enabled: true
+    error_code: "N813"
+    severity: "error"
+
+  - name: "CamelCase Import Naming as Constant"
+    description: "CamelCase imports should not be renamed as constants."
+    type: "camelcase-import-as-constant"
+    enabled: true
+    error_code: "N814"
+    severity: "error"
+
+  - name: "MixedCase Variables in Class Scope"
+    description: "MixedCase variables are not allowed in class scope."
+    type: "mixedcase-variables-in-class-scope"
+    enabled: true
+    error_code: "N815"
+    severity: "error"
+
+  - name: "MixedCase Variables in Global Scope"
+    description: "MixedCase variables are not allowed in the global scope."
+    type: "mixedcase-variables-in-global-scope"
+    enabled: true
+    error_code: "N816"
+    severity: "error"
+
+  - name: "CamelCase Import Naming as Acronym"
+    description: "CamelCase imports should not be renamed as acronyms."
+    type: "camelcase-import-as-acronym"
+    enabled: true
+    error_code: "N817"
+    severity: "error"
+
+  - name: "Exception Naming with 'Error' Suffix"
+    description: "Exception names should end with the 'Error' suffix."
+    type: "exception-names-error-suffix"
+    enabled: true
+    error_code: "N818"
+    severity: "error"
+
+style_conventions:
+  #INDENTATION CHECKS
+  indentation:
+    - name: "Mixed Spaces and Tabs"
+      description: "Ensure consistent indentation using either spaces or tabs, but not both."
+      type: "mixed-spaces-tabs"
+      enabled: true 
+      error_code: "E101"
+      severity: "error"  
+
+    - name: "Indentation Multiple of Four"
+      description: "Ensure that indentation is a multiple of four spaces."
+      type: "indentation-multiple-of-four"
+      enabled: true
+      error_code: "E111"
+      severity: "error"
+
+    - name: "Expected Indented Block"
+      description: "Ensure that an indented block is expected at the specified level."
+      type: "expected-indented-block"
+      enabled: true
+      error_code: "E112"
+      severity: "error"
+
+    - name: "Unexpected Indentation"
+      description: "Ensure indentation is correct; unexpected indentation at a given location is flagged."
+      type: "unexpected-indentation"
+      enabled: true
+      error_code: "E113"
+      severity: "error"
+
+    - name: "Comment Indentation Multiple of Four"
+      description: "Ensure that comments are also indented with multiples of four spaces."
+      type: "comment-indentation-multiple-of-four"
+      enabled: true
+      error_code: "E114"
+      severity: "warning"
+
+    - name: "Expected Indented Block (Comment)"
+      description: "Ensure indented blocks for comments as required."
+      type: "expected-indented-block-comment"
+      enabled: true
+      error_code: "E115"
+      severity: "error"
+
+    - name: "Unexpected Comment Indentation"
+      description: "Flag unexpected indentation specifically for comments."
+      type: "unexpected-comment-indentation"
+      enabled: true
+      error_code: "E116"
+      severity: "error"
+
+    - name: "Over-Indented"
+      description: "Ensure there is no over-indentation of lines (beyond expected levels)."
+      type: "over-indented"
+      enabled: true
+      error_code: "E117"
+      severity: "error"
+
+    - name: "Continuation Line Under-Indented for Hanging Indent"
+      description: "Ensure continuation lines are correctly indented when there is a hanging indent."
+      type: "continuation-line-under-indented-hanging-indent"
+      enabled: true
+      error_code: "E121"
+      severity: "error"
+
+    - name: "Continuation Line Missing or Outdented"
+      description: "Ensure continuation lines are correctly indented and not missing indentation."
+      type: "continuation-line-missing-or-outdented"
+      enabled: true
+      error_code: "E122"
+      severity: "error"
+
+    - name: "Closing Bracket Misaligned"
+      description: "Ensure that closing brackets match the indentation of the opening bracket’s line."
+      type: "closing-bracket-misaligned"
+      enabled: true
+      error_code: "E123"
+      severity: "error"
+
+    - name: "Closing Bracket Does Not Match Visual Indentation"
+      description: "Ensure that closing brackets match the visual indentation of the previous line."
+      type: "closing-bracket-visual-indentation"
+      enabled: true
+      error_code: "E124"
+      severity: "error"
+
+    - name: "Continuation Line with Same Indent as Next Logical Line"
+      description: "Ensure continuation lines do not have the same indentation as the next logical line."
+      type: "continuation-line-same-indent-next-logical-line"
+      enabled: true
+      error_code: "E125"
+      severity: "error"
+
+    - name: "Continuation Line Over-Indented for Hanging Indent"
+      description: "Ensure continuation lines are correctly indented and not over-indented for a hanging indent."
+      type: "continuation-line-over-indented-hanging-indent"
+      enabled: true
+      error_code: "E126"
+      severity: "error"
+
+    - name: "Continuation Line Over-Indented for Visual Indent"
+      description: "Ensure continuation lines are correctly indented when aligning visually."
+      type: "continuation-line-over-indented-visual-indent"
+      enabled: true
+      error_code: "E127"
+      severity: "error"
+
+    - name: "Continuation Line Under-Indented for Visual Indent"
+      description: "Ensure continuation lines are not under-indented for visual alignment."
+      type: "continuation-line-under-indented-visual-indent"
+      enabled: true
+      error_code: "E128"
+      severity: "error"
+
+    - name: "Visually Indented Line with Same Indent as Next Logical Line"
+      description: "Ensure visually indented lines do not have the same indentation as the next logical line."
+      type: "visually-indented-same-indent-next-logical-line"
+      enabled: true
+      error_code: "E129"
+      severity: "error"
+
+    - name: "Continuation Line Unaligned for Hanging Indent"
+      description: "Ensure continuation lines are properly aligned for hanging indents."
+      type: "continuation-line-unaligned-hanging-indent"
+      enabled: true
+      error_code: "E131"
+      severity: "error"
+
+    - name: "Closing Bracket Missing Indentation"
+      description: "Ensure closing brackets are correctly indented according to their level."
+      type: "closing-bracket-missing-indentation"
+      enabled: true
+      error_code: "E133"
+      severity: "error"
+
+    - name: "Indentation Contains Tabs"
+      description: "Ensure that indentation does not contain tabs. Only spaces should be used for indentation."
+      type: "indentation-contains-tabs"
+      enabled: true  # Boolean (true or false)
+      error_code: "W191"
+      severity: "warning"  # or "error"
+
+  #WHITESPACES CHECKS
+  whitespaces:
+    - name: "Whitespace After Opening Parenthesis"
+      description: "Ensure there is no whitespace immediately following an opening parenthesis."
+      type: "whitespace-after-opening-parenthesis"
+      enabled: true  # Boolean (true or false)
+      error_code: "E201"
+      severity: "error"  # or "error"
+
+    - name: "Whitespace Before Closing Parenthesis"
+      description: "Ensure there is no whitespace immediately before a closing parenthesis."
+      type: "whitespace-before-closing-parenthesis"
+      enabled: true
+      error_code: "E202"
+      severity: "error"
+
+    - name: "Whitespace Before Comma, Semicolon, or Colon"
+      description: "Ensure no whitespace before a comma, semicolon, or colon."
+      type: "whitespace-before-separator"
+      enabled: true
+      error_code: "E203"
+      severity: "error"
+
+    - name: "Whitespace Before Opening Parenthesis"
+      description: "Ensure there is no whitespace before an opening parenthesis."
+      type: "whitespace-before-opening-parenthesis"
+      enabled: true
+      error_code: "E211"
+      severity: "error"
+
+    - name: "Multiple Spaces Before Operator"
+      description: "Ensure only one space before operators and no multiple spaces."
+      type: "multiple-spaces-before-operator"
+      enabled: true
+      error_code: "E221"
+      severity: "error"
+
+    - name: "Multiple Spaces After Operator"
+      description: "Ensure only one space after operators and no multiple spaces."
+      type: "multiple-spaces-after-operator"
+      enabled: true
+      error_code: "E222"
+      severity: "error"
+
+    - name: "Tab Before Operator"
+      description: "Ensure no tab characters before operators."
+      type: "tab-before-operator"
+      enabled: true
+      error_code: "E223"
+      severity: "error"
+
+    - name: "Tab After Operator"
+      description: "Ensure no tab characters after operators."
+      type: "tab-after-operator"
+      enabled: true
+      error_code: "E224"
+      severity: "error"
+
+    - name: "Missing Whitespace Around Operator"
+      description: "Ensure there is at least one space around an operator."
+      type: "missing-whitespace-around-operator"
+      enabled: true
+      error_code: "E225"
+      severity: "error"
+
+    - name: "Missing Whitespace Around Arithmetic Operator"
+      description: "Ensure there is whitespace around arithmetic operators (+, -, *, /, etc.)."
+      type: "missing-whitespace-around-arithmetic-operator"
+      enabled: true
+      error_code: "E226"
+      severity: "error"
+
+    - name: "Missing Whitespace Around Bitwise or Shift Operator"
+      description: "Ensure there is whitespace around bitwise or shift operators (<<, >>, |, &, etc.)."
+      type: "missing-whitespace-around-bitwise-operator"
+      enabled: true
+      error_code: "E227"
+      severity: "error"
+
+    - name: "Missing Whitespace Around Modulo Operator"
+      description: "Ensure there is whitespace around modulo operators."
+      type: "missing-whitespace-around-modulo-operator"
+      enabled: true
+      error_code: "E228"
+      severity: "error"
+
+    - name: "Missing Whitespace After Separator"
+      description: "Ensure there is a single space after a comma, semicolon, or colon."
+      type: "missing-whitespace-after-separator"
+      enabled: true
+      error_code: "E231"
+      severity: "warning"
+
+    - name: "Multiple Spaces After Comma"
+      description: "Ensure no multiple spaces after a comma."
+      type: "multiple-spaces-after-comma"
+      enabled: true
+      error_code: "E241"
+      severity: "warning"
+
+    - name: "Tab After Comma"
+      description: "Ensure there are no tabs after a comma."
+      type: "tab-after-comma"
+      enabled: true
+      error_code: "E242"
+      severity: "warning"
+
+    - name: "Unexpected Spaces Around Keyword/Parameter Equals"
+      description: "Ensure there are no unexpected spaces around keyword/parameter equals signs."
+      type: "unexpected-spaces-around-equals"
+      enabled: true
+      error_code: "E251"
+      severity: "warning"
+
+    - name: "At Least Two Spaces Before Inline Comment"
+      description: "Ensure there are at least two spaces before inline comments."
+      type: "at-least-two-spaces-before-inline-comment"
+      enabled: true
+      error_code: "E261"
+      severity: "warning"
+
+    - name: "Inline Comment Should Start with `# `"
+      description: "Ensure inline comments start with `# ` followed by a space."
+      type: "inline-comment-start-with-hash-space"
+      enabled: true
+      error_code: "E262"
+      severity: "warning"
+
+    - name: "Block Comment Should Start with `# `"
+      description: "Ensure block comments start with `# ` followed by a space."
+      type: "block-comment-start-with-hash-space"
+      enabled: true
+      error_code: "E265"
+      severity: "warning"
+
+    - name: "Too Many Leading `#` for Block Comment"
+      description: "Ensure there are not too many leading `#` characters in block comments."
+      type: "too-many-leading-hash-in-block-comment"
+      enabled: true
+      error_code: "E266"
+      severity: "error"
+
+    - name: "Multiple Spaces After Keyword"
+      description: "Ensure there are no multiple spaces after keywords."
+      type: "multiple-spaces-after-keyword"
+      enabled: true
+      error_code: "E271"
+      severity: "error"
+
+    - name: "Multiple Spaces Before Keyword"
+      description: "Ensure there are no multiple spaces before keywords."
+      type: "multiple-spaces-before-keyword"
+      enabled: true
+      error_code: "E272"
+      severity: "error"
+
+    - name: "Tab After Keyword"
+      description: "Ensure there are no tab characters after keywords."
+      type: "tab-after-keyword"
+      enabled: true
+      error_code: "E273"
+      severity: "error"
+
+    - name: "Tab Before Keyword"
+      description: "Ensure there are no tab characters before keywords."
+      type: "tab-before-keyword"
+      enabled: true
+      error_code: "E274"
+      severity: "error"
+
+    - name: "Missing Whitespace After Keyword"
+      description: "Ensure there is a space after the keyword."
+      type: "missing-whitespace-after-keyword"
+      enabled: true
+      error_code: "E275"
+      severity: "error"
+
+    - name: "Trailing Whitespace"
+      description: "Ensure that there is no trailing whitespace at the end of a line."
+      type: "trailing-whitespace"
+      enabled: true  # Boolean (true or false)
+      error_code: "W291"
+      severity: "warning"  # or "error"
+
+    - name: "No Newline at End of File"
+      description: "Ensure that there is a newline at the end of the file."
+      type: "no-newline-at-end-of-file"
+      enabled: true
+      error_code: "W292"
+      severity: "warning"
+
+    - name: "Blank Line Contains Whitespace"
+      description: "Ensure that blank lines do not contain any whitespace."
+      type: "blank-line-contains-whitespace"
+      enabled: true
+      error_code: "W293"
+      severity: "warning"
+
+  #BLANK LINES CHECK
+  blank_lines:
+    - name: "Expected 1 Blank Line Found 0"
+      description: "Ensure that exactly one blank line is present where required."
+      type: "expected-1-blank-line-found-0"
+      enabled: true  # Boolean (true or false)
+      error_code: "E301"
+      severity: "error"  # or "error"
+
+    - name: "Expected 2 Blank Lines Found 0"
+      description: "Ensure that exactly two blank lines are present where required."
+      type: "expected-2-blank-lines-found-0"
+      enabled: true
+      error_code: "E302"
+      set.severity: "hint"
+
+    - name: "Too Many Blank Lines (3)"
+      description: "Ensure that there are no more than two consecutive blank lines."
+      type: "too-many-blank-lines"
+      enabled: true
+      error_code: "E303"
+      severity: "error"
+
+    - name: "Blank Lines Found After Function Decorator"
+      description: "Ensure that no blank lines exist directly after a function decorator."
+      type: "blank-lines-after-function-decorator"
+      enabled: true
+      error_code: "E304"
+      severity: "error"
+
+    - name: "Expected 2 Blank Lines After End of Function or Class"
+      description: "Ensure exactly two blank lines are placed after the end of a function or class definition."
+      type: "expected-2-blank-lines-after-function-class"
+      enabled: true
+      error_code: "E305"
+      severity: "error"
+
+    - name: "Expected 1 Blank Line Before Nested Definition"
+      description: "Ensure exactly one blank line exists before a nested definition (like inner functions or classes)."
+      type: "expected-1-blank-line-before-nested-definition"
+      enabled: true
+      error_code: "E306"
+      severity: "error"
+
+    - name: "Blank Line at End of File"
+      description: "Ensure that there is no blank line at the end of the file."
+      type: "blank-line-at-end-of-file"
+      enabled: true  # Boolean (true or false)
+      error_code: "W391"
+      severity: "warning"  # or "error"
+
+  #IMPORT CHECKS
+  import:
+    - name: "Multiple Imports on One Line"
+      description: "Ensure that each import is placed on a separate line."
+      type: "multiple-imports-on-one-line"
+      enabled: true  # Boolean (true or false)
+      error_code: "E401"
+      severity: "error"  # or "error"
+
+    - name: "Module Level Import Not at Top of File"
+      description: "Ensure that all imports are located at the top of the file, before any other code."
+      type: "module-level-import-not-at-top"
+      enabled: true
+      error_code: "E402"
+      severity: "error"
+
+  #LINE LENGTH CHECKS
+  line_length:
+    - name: "Line Too Long"
+      description: "Ensure that no line exceeds the allowed maximum length (e.g., 79 characters)."
+      type: "line-too-long"
+      enabled: true  # Boolean (true or false)
+      error_code: "E501"
+      severity: "error"  # or "error"
+      max_line_length: 79  # Customizable value for maximum line length
+
+    - name: "Redundant Backslash Between Brackets"
+      description: "Ensure there are no redundant backslashes used between brackets."
+      type: "redundant-backslash-between-brackets"
+      enabled: true
+      error_code: "E502"
+      severity: "error"
+
+
+  #STATEMENT CHECKS
+  statement:
+    - name: "Multiple Statements on One Line (Colon)"
+      description: "Ensure no multiple statements are present on one line, especially after a colon."
+      type: "multiple-statements-on-one-line-colon"
+      enabled: true  # Boolean (true or false)
+      error_code: "E701"
+      severity: "error"  # or "error"
+
+    - name: "Multiple Statements on One Line (Semicolon)"
+      description: "Ensure no multiple statements are present on one line, especially separated by a semicolon."
+      type: "multiple-statements-on-one-line-semicolon"
+      enabled: true
+      error_code: "E702"
+      severity: "error"
+
+    - name: "Statement Ends with a Semicolon"
+      description: "Ensure no statement ends with a semicolon."
+      type: "statement-ends-with-semicolon"
+      enabled: true
+      error_code: "E703"
+      severity: "error"
+
+    - name: "Multiple Statements on One Line (Def)"
+      description: "Ensure no multiple statements exist on the same line in a function definition."
+      type: "multiple-statements-on-one-line-def"
+      enabled: true
+      error_code: "E704"
+      severity: "error"
+
+    - name: "Comparison to None Should Use 'is None'"
+      description: "Ensure comparisons to None are done using 'if cond is None:', not 'if cond == None:'."
+      type: "comparison-to-None"
+      enabled: true
+      error_code: "E711"
+      severity: "error"
+
+    - name: "Comparison to True Should Use 'if cond is True:'"
+      description: "Ensure comparisons to True are done using 'if cond is True:' or 'if cond:'."
+      type: "comparison-to-True"
+      enabled: true
+      error_code: "E712"
+      severity: "error"
+
+    - name: "Test for Membership Should Use 'not in'"
+      description: "Ensure tests for membership are done using 'not in'."
+      type: "test-for-membership"
+      enabled: true
+      error_code: "E713"
+      severity: "error"
+
+    - name: "Test for Object Identity Should Use 'is not'"
+      description: "Ensure object identity tests use 'is not'."
+      type: "test-for-object-identity"
+      enabled: true
+      error_code: "E714"
+      severity: "error"
+
+    - name: "Do Not Compare Types, Use 'isinstance()'"
+      description: "Ensure you do not compare types directly, use 'isinstance()' instead."
+      type: "do-not-compare-types"
+      enabled: true
+      error_code: "E721"
+      severity: "error"
+
+    - name: "Do Not Use Bare Except, Specify Exception Instead"
+      description: "Ensure you do not use a bare 'except'. Always specify the exception being caught."
+      type: "do-not-use-bare-except"
+      enabled: true
+      error_code: "E722"
+      severity: "error"
+
+    - name: "Do Not Assign a Lambda Expression, Use a 'def'"
+      description: "Ensure lambda expressions are not assigned. Use a 'def' instead."
+      type: "do-not-assign-lambda"
+      enabled: true
+      error_code: "E731"
+      severity: "error"
+
+    - name: "Do Not Use Variables Named 'l', 'O', or 'I'"
+      description: "Ensure that variables are not named 'l', 'O', or 'I' as these can be confusing."
+      type: "do-not-use-l-O-I"
+      enabled: true
+      error_code: "E741"
+      severity: "error"
+
+    - name: "Do Not Define Classes Named 'l', 'O', or 'I'"
+      description: "Ensure that class names are not 'l', 'O', or 'I', as these can cause ambiguity."
+      type: "do-not-define-l-O-I-classes"
+      enabled: true
+      error_code: "E742"
+      severity: "error"
+
+    - name: "Do Not Define Functions Named 'l', 'O', or 'I'"
+      description: "Ensure that function names are not 'l', 'O', or 'I' to avoid ambiguity."
+      type: "do-not-define-l-O-I-functions"
+      enabled: true
+      error_code: "E743"
+      severity: "error"
+
+  #RUNTIME CHECKS
+  runtime:
+    - name: "SyntaxError or IndentationError"
+      description: "Ensure that syntax errors or indentation errors are caught."
+      type: "syntax-or-indentation-error"
+      enabled: true  # Boolean (true or false)
+      error_code: "E901"
+      severity: "error"  # or "warning"
+
+    - name: "IOError"
+      description: "Ensure that IOErrors are handled properly during runtime."
+      type: "ioerror"
+      enabled: true
+      error_code: "E902"
+      severity: "error"
+
+  line_break:
+    - name: "Line Break Before Binary Operator"
+      description: "Ensure that line breaks do not occur before a binary operator."
+      type: "line-break-before-binary-operator"
+      enabled: true  # Boolean (true or false)
+      error_code: "W503"
+      severity: "warning"  # or "error"
+
+    - name: "Line Break After Binary Operator"
+      description: "Ensure that line breaks do not occur after a binary operator."
+      type: "line-break-after-binary-operator"
+      enabled: true
+      error_code: "W504"
+      severity: "warning"
+
+    - name: "Doc Line Too Long"
+      description: "Ensure that docstrings do not exceed the maximum line length of 79 characters."
+      type: "doc-line-too-long"
+      enabled: true
+      error_code: "W505"
+      severity: "warning"
+
+  deprecation:
+    - name: "Invalid Escape Sequence"
+      description: "Ensure that no invalid escape sequences are used in strings."
+      type: "invalid-escape-sequence"
+      enabled: true  # Boolean (true or false)
+      error_code: "W605"
+      severity: "warning"  # or "error"
+
+#Pyflakes -> mix with code conventions
+  flow_control:
+    - name: "Break Outside Loop"
+      description: "Ensure break statements are not used outside loops."
+      type: "break-outside-loop"
+      enabled: true
+      error_code: "F701"
+      severity: "error"
+
+    - name: "Continue Outside Loop"
+      description: "Ensure continue statements are not used outside loops."
+      type: "continue-outside-loop"
+      enabled: true
+      error_code: "F702"
+      severity: "error"
+
+    - name: "Yield Outside Function"
+      description: "Ensure 'yield' statements are not used outside functions."
+      type: "yield-outside-function"
+      enabled: true
+      error_code: "F704"
+      severity: "error"
+
+    - name: "Return Outside Function"
+      description: "Ensure return statements are not used outside functions/methods."
+      type: "return-outside-function"
+      enabled: true
+      error_code: "F706"
+      severity: "error"
+
+    - name: "Always-True Test in `if`"
+      description: "Detect always-true tests in if-statements (e.g., testing a tuple)."
+      type: "always-true-test"
+      enabled: true
+      error_code: "F634"
+      severity: "error"
+
+  logical_issues:
+    - name: "Too Many Expressions in Assignment"
+      description: "Detect too many expressions in a star-unpacked assignment."
+      type: "too-many-expressions"
+      enabled: true
+      error_code: "F621"
+      severity: "error"
+
+    - name: "Two Starred Expressions in Assignment"
+      description: "Detect when two or more starred expressions are used in assignment."
+      type: "two-starred-expressions"
+      enabled: true
+      error_code: "F622"
+      severity: "error"
+
+    - name: "Assertion Test is Always True"
+      description: "Detect assertions with tuple tests that are always true."
+      type: "assertion-test-tuple"
+      enabled: true
+      error_code: "F631"
+      severity: "error"
+
+    - name: "Use ==/!= with Literal Comparisons"
+      description: "Ensure use of ==/!= for str, bytes, and int literal comparisons."
+      type: "compare-literal"
+      enabled: true
+      error_code: "F632"
+      severity: "error"
+
+    - name: "Use of `>>` with Print Function"
+      description: "Ensure the '>>' operator is not used with print."
+      type: "invalid-shift-operator"
+      enabled: true
+      error_code: "F633"
+      severity: "error"
+
+    - name: "Invalid Exception Handling"
+      description: "Ensure 'except' block is the last exception handler."
+      type: "invalid-except-block-order"
+      enabled: true
+      error_code: "F707"
+      severity: "error"
+
+    - name: "Syntax Error in Doctest"
+      description: "Ensure there are no syntax errors in doctests."
+      type: "doctest-error"
+      enabled: true
+      error_code: "F721"
+      severity: "error"
+
+    - name: "Syntax Error in Forward Annotation"
+      description: "Ensure that forward annotations are syntax valid."
+      type: "forward-annotation-syntax-error"
+      enabled: true
+      error_code: "F722"
+      severity: "error"
+
+    - name: "Syntax Error in Type Comment"
+      description: "Ensure no syntax errors in type comments."
+      type: "type-comment-error"
+      enabled: true
+      error_code: "F723"
+      severity: "error"
+
+    - name: "Redefinition of Unused Name"
+      description: "Detect redefinition of unused variables."
+      type: "redefinition-unused-name"
+      enabled: true
+      error_code: "F811"
+      severity: "error"
+
+    - name: "Undefined Name"
+      description: "Detect usage of undefined variables."
+      type: "undefined-variable"
+      enabled: true
+      error_code: "F821"
+      set.severity: "warning"
+
+    - name: "Undefined Name in `__all__`"
+      description: "Ensure no undefined variables are listed in `__all__`."
+      type: "undefined-variable-in-all"
+      enabled: true
+      error_code: "F822"
+      severity: "error"
+
+    - name: "Reference to Local Before Assignment"
+      description: "Ensure local variables are assigned before they are referenced."
+      type: "reference-before-assignment"
+      enabled: true
+      error_code: "F823"
+      severity: "error"
+
+    - name: "Duplicate Argument Names"
+      description: "Ensure function argument names are not duplicated."
+      type: "duplicate-function-arg"
+      enabled: true
+      error_code: "F831"
+      severity: "error"
+
+    - name: "Unused Local Variable"
+      description: "Ensure that local variables are used after being assigned."
+      type: "unused-local-variable"
+      enabled: true
+      error_code: "F841"
+      severity: "error"
+
+    - name: "NotImplementedError"
+      description: "Ensure 'raise NotImplementedError' is used, not 'raise NotImplemented'."
+      type: "not-implemented-error"
+      enabled: true
+      error_code: "F901"
+      severity: "error"
+
+  code_quality:
+    - name: "Unused Import"
+      description: "Ensure that all imports are used in the code."
+      type: "unused-import"
+      enabled: true # Boolean (true or false)
+      error_code: "F401"
+      severity: "error" # or "error"
+
+    - name: "Shadowed Import"
+      description: "Detect if an imported module is shadowed by a loop variable."
+      type: "import-shadowed"
+      enabled: true
+      error_code: "F402"
+      severity: "error"
+
+    - name: "Star Import"
+      description: "Ensure 'from module import *' is not used, as it causes undefined name issues."
+      type: "star-import"
+      enabled: true
+      error_code: "F403"
+      severity: "error"
+
+    - name: "Future Imports"
+      description: "Ensure future imports come before any other statements."
+      type: "future-import-order"
+      enabled: true
+      error_code: "F404"
+      severity: "error"
+
+    - name: "Star Import Undefined Name"
+      description: "Ensure that a name is defined properly and not derived from star imports."
+      type: "undefined-from-star-import"
+      enabled: true
+      error_code: "F405"
+      severity: "error"
+
+    - name: "Star Import Restriction"
+      description: "Ensure 'from module import *' is only used at the module level."
+      type: "star-import-restriction"
+      enabled: true
+      error_code: "F406"
+      severity: "error"
+
+    - name: "Undefined Future Feature"
+      description: "Check if an undefined future feature name was imported."
+      type: "undefined-future-import"
+      enabled: true
+      error_code: "F407"
+      severity: "error"
+
+    - name: "Invalid Format Literals"
+      description: "Detect invalid format string literals (% syntax)."
+      type: "invalid-format"
+      enabled: true
+      error_code: "F501"
+      severity: "error"
+
+    - name: "Invalid Mapping in Format"
+      description: "Detect when '% format' expects a mapping but gets a sequence."
+      type: "invalid-mapping-format"
+      enabled: true
+      error_code: "F502"
+      severity: "error"
+
+    - name: "Invalid Sequence in Format"
+      description: "Detect when '% format' expects a sequence but gets a mapping."
+      type: "invalid-sequence-format"
+      enabled: true
+      error_code: "F503"
+      severity: "error"
+
+    - name: "Unused Named Arguments in Format"
+      description: "Detect unused named arguments in '% format' strings."
+      type: "unused-named-arguments"
+      enabled: true
+      error_code: "F504"
+      severity: "error"
+
+    - name: "Missing Named Arguments"
+      description: "Detect missing named arguments in '% format' strings."
+      type: "missing-named-arguments"
+      enabled: true
+      error_code: "F505"
+      severity: "error"
+
+    - name: "Mixed Positional and Named Arguments in Format"
+      description: "Detect mixing of positional and named arguments in '% format' strings."
+      type: "mixed-args-format"
+      enabled: true
+      error_code: "F506"
+      severity: "error"
+
+    - name: "Mismatched Arguments in Format"
+      description: "Detect a mismatch of placeholder and argument count in '% format'."
+      type: "mismatch-args-format"
+      enabled: true
+      error_code: "F507"
+      severity: "error"
+
+    - name: "Invalid Format Character"
+      description: "Detect invalid format characters in '% format'."
+      type: "invalid-format-character"
+      enabled: true
+      error_code: "F509"
+      severity: "error"
+
+    - name: "Invalid .format() String"
+      description: "Detect invalid .format() string."
+      type: "invalid-format-method"
+      enabled: true
+      error_code: "F521"
+      severity: "error"
+
+    - name: "Unused Named Arguments in .format()"
+      description: "Detect unused named arguments in .format() strings."
+      type: "unused-named-arguments-format"
+      enabled: true
+      error_code: "F522"
+      severity: "error"
+
+    - name: "Unused Positional Arguments in .format()"
+      description: "Detect unused positional arguments in .format() strings."
+      type: "unused-positional-arguments-format"
+      enabled: true
+      error_code: "F523"
+      severity: "error"
+
+    - name: "Missing Arguments in .format()"
+      description: "Detect missing arguments in .format() strings."
+      type: "missing-argument-format"
+      enabled: true
+      error_code: "F524"
+      severity: "error"
+
+    - name: "Mixed Automatic and Manual Numbering in .format()"
+      description: "Detect mixed automatic and manual numbering in .format() strings."
+      type: "mixed-automatic-manual-numbering"
+      enabled: true
+      error_code: "F525"
+      severity: "error"
+
+    - name: "F-String Without Placeholders"
+      description: "Ensure that f-strings contain placeholders."
+      type: "empty-f-string"
+      enabled: true
+      error_code: "F541"
+      severity: "error"
+
+    - name: "Dictionary Key Repeated"
+      description: "Detect repeated dictionary keys with different values."
+      type: "duplicate-dict-key"
+      enabled: true
+      error_code: "F601"
+      severity: "error"
+
+    - name: "Variable Name Repeated in Dictionary"
+      description: "Detect repeated dictionary key variable names."
+      type: "duplicate-dict-var-key"
+      enabled: true
+      error_code: "F602"
+      severity: "error"
+
+  logical_operations:
+    - name: "Too Many Expressions in Assignment"
+      description: "Detect too many expressions in a star-unpacked assignment."
+      type: "too-many-expressions"
+      enabled: true
+      error_code: "F621"
+      severity: "error"
+
+    - name: "Two Starred Expressions in Assignment"
+      description: "Detect when two or more starred expressions are used in assignment."
+      type: "two-starred-expressions"
+      enabled: true
+      error_code: "F622"
+      severity: "error"
+
+    - name: "Assertion Test is Always True"
+      description: "Detect assertions with tuple tests that are always true."
+      type: "assertion-test-tuple"
+      enabled: true
+      error_code: "F631"
+      severity: "error"
+
+    - name: "Use ==/!= with Literal Comparisons"
+      description: "Ensure use of ==/!= for str, bytes, and int literal comparisons."
+      type: "compare-literal"
+      enabled: true
+      error_code: "F632"
+      severity: "error"
+
+    - name: "Use of `>>` with Print Function"
+      description: "Ensure the '>>' operator is not used with print."
+      type: "invalid-shift-operator"
+      enabled: true
+      error_code: "F633"
+      severity: "error"
+
+    - name: "Always-True Test in `if`"
+      description: "Detect always-true tests in if-statements (e.g., testing a tuple)."
+      type: "always-true-test"
+      enabled: true
+      error_code: "F634"
+      severity: "error"
+
+  #McCabe -> Code complexity setting
+  code_complexity:
+    - name: "Custom code complexity setting (default - )"
+      description: "Set the cap for the maximum cyclomatic complexity. A negative number equals min-complexity"
+      type: "code-complexity" 
+      value: 10 
+      enabled: true
+      error_code: "C901"
+      severity: "error"
+
+#Bandit -> security scan
+security:
+  - name: "Assert Used"
+    description: "Usage of assert statements can lead to security risks if the assert is removed in optimized code. Avoid using assert statements in production code."
+    type: "assert-used"
+    enabled: true
+    error_code: "S101"
+    severity: "error"
+
+  - name: "Exec Used"
+    description: "Usage of exec can lead to arbitrary code execution and may open up the system to vulnerabilities. Avoid using exec on untrusted input."
+    type: "exec-used"
+    enabled: true
+    error_code: "S102"
+    severity: "error"
+
+  - name: "Set Bad File Permissions"
+    description: "Setting incorrect file permissions can result in unauthorized access to sensitive files. Ensure that file permissions are properly set."
+    type: "set-bad-file-permissions"
+    enabled: true
+    error_code: "S103"
+    severity: "error"
+
+  - name: "Hardcoded Bind All Interfaces"
+    description: "Binding a service to all interfaces (0.0.0.0) can expose the service to the entire network. Consider binding to a specific IP or localhost."
+    type: "hardcoded-bind-all-interfaces"
+    enabled: true
+    error_code: "S104"
+    severity: "error"
+
+  - name: "Hardcoded Password String"
+    description: "Hardcoding passwords in the code is a security risk as it exposes sensitive information. Avoid hardcoding passwords directly in your code."
+    type: "hardcoded-password-string"
+    enabled: true
+    error_code: "S105"
+    set.severity: "hint"
+
+  - name: "Hardcoded Password Funcarg"
+    description: "Passing a hardcoded password as a function argument can expose sensitive data. Avoid passing passwords as function arguments."
+    type: "hardcoded-password-funcarg"
+    enabled: true
+    error_code: "S106"
+    severity: "error"
+
+  - name: "Hardcoded Password Default"
+    description: "Hardcoding passwords as function defaults is a security risk. Consider using more secure means of managing passwords."
+    type: "hardcoded-password-default"
+    enabled: true
+    error_code: "S107"
+    severity: "error"
+
+  - name: "Hardcoded Tmp Directory"
+    description: "Using a hardcoded tmp directory can lead to insecure temporary file handling. Use more secure or dynamic directories for temporary files."
+    type: "hardcoded-tmp-directory"
+    enabled: true
+    error_code: "S108"
+    severity: "error"
+
+  - name: "Try Except Pass"
+    description: "Using a try-except block with a 'pass' statement may mask exceptions and lead to undetected errors in your code. Avoid using 'pass' in except blocks."
+    type: "try-except-pass"
+    enabled: true
+    error_code: "S110"
+    severity: "error"
+
+  - name: "Try Except Continue"
+    description: "Using a try-except block with a 'continue' statement may hide underlying issues. It's better to handle exceptions properly or log them for debugging."
+    type: "try-except-continue"
+    enabled: true
+    error_code: "S112"
+    severity: "error"
+
+  - name: "Flask Debug True"
+    description: "Setting Flask's debug mode to true can expose sensitive information and vulnerabilities. Ensure debug mode is disabled in production."
+    type: "flask-debug-true"
+    enabled: true
+    error_code: "S201"
+    severity: "error"
+
+  - name: "Pickle Module Used"
+    description: "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data. Avoid using pickle with untrusted data sources."
+    type: "pickle-used"
+    enabled: true
+    error_code: "S301"
+    set.severity: "critical"
+
+  - name: "Unsafe Marshal Module"
+    description: "Deserialization with the marshal module is potentially dangerous. Avoid using marshal for deserialization of untrusted data."
+    type: "unsafe-marshal-module"
+    enabled: true
+    error_code: "S302"
+    severity: "error"
+
+  - name: "Insecure Hash Function"
+    description: "Using insecure hash functions such as MD2, MD4, MD5, or SHA1 can expose the system to vulnerabilities. Use secure algorithms like SHA256 or SHA3."
+    type: "insecure-hash-function"
+    enabled: true
+    error_code: "S303"
+    severity: "error"
+
+  - name: "Insecure Cipher"
+    description: "Use of insecure ciphers can expose data to attacks. Replace with a known secure cipher such as AES."
+    type: "insecure-cipher"
+    enabled: true
+    error_code: "S304"
+    severity: "error"
+
+  - name: "Insecure Cipher Mode"
+    description: "Use of insecure cipher modes may weaken encryption. Choose secure cipher modes (e.g., CBC, GCM) instead."
+    type: "insecure-cipher-mode"
+    enabled: true
+    error_code: "S305"
+    severity: "error"
+
+  - name: "Insecure mktemp"
+    description: "The mktemp function is insecure and deprecated. Use safer alternatives for creating temporary files."
+    type: "insecure-mktemp"
+    enabled: true
+    error_code: "S306"
+    severity: "error"
+
+  - name: "Insecure Function (Literal Eval)"
+    description: "Using functions like eval and exec is risky. Consider using safer alternatives like ast.literal_eval when parsing untrusted data."
+    type: "insecure-function-literal-eval"
+    enabled: true
+    error_code: "S307"
+    severity: "error"
+
+  - name: "Unsafe Mark Safe"
+    description: "The use of mark_safe() can expose applications to cross-site scripting (XSS) vulnerabilities. Use carefully or avoid in sensitive contexts."
+    type: "unsafe-mark-safe"
+    enabled: true
+    error_code: "S308"
+    severity: "error"
+
+  - name: "Use of HTTPSConnection on Old Python"
+    description: "Using HTTPSConnection on older versions of Python before 2.7.9 and 3.4.3 may expose communication to attacks. Ensure proper SSL context."
+    type: "https-connection-old-python"
+    enabled: true
+    error_code: "S309"
+    severity: "error"
+
+  - name: "Audit URL Open for Permitted Schemes"
+    description: "Audit URL open for permitted schemes to avoid unintended schemes like file:/ or custom schemes which can pose security risks."
+    type: "audit-url-open"
+    enabled: true
+    error_code: "S310"
+    severity: "error"
+
+  - name: "Insecure Pseudo-Random Generators"
+    description: "Standard pseudo-random number generators should not be used for cryptographic purposes. Use a cryptographically secure PRNG."
+    type: "insecure-prng"
+    enabled: true
+    error_code: "S311"
+    severity: "error"
+
+  - name: "Telnet Functions Called"
+    description: "Telnet is insecure and should not be used. Use SSH or other encrypted protocols for secure communication."
+    type: "telnet-functions-called"
+    enabled: true
+    error_code: "S312"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S313)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-lxml"
+    enabled: true
+    error_code: "S313"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S314)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-elementtree"
+    enabled: true
+    error_code: "S314"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S315)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-minidom"
+    enabled: true
+    error_code: "S315"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S316)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-expat"
+    enabled: true
+    error_code: "S316"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S317)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-sax"
+    enabled: true
+    error_code: "S317"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S318)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-pulldom"
+    enabled: true
+    error_code: "S318"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S319)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-cElementTree"
+    enabled: true
+    error_code: "S319"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S320)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with its defusedxml equivalent function."
+    type: "unsafe-xml-parsing-xmltodict"
+    enabled: true
+    error_code: "S320"
+    severity: "error"
+
+  - name: "Insecure FTP Functions"
+    description: "FTP-related functions are being called. FTP is considered insecure. Use SSH/SFTP/SCP or some other encrypted protocol."
+    type: "insecure-ftp-functions"
+    enabled: true
+    error_code: "S321"
+    severity: "error"
+
+  - name: "Insecure SSL Context"
+    description: "Python allows the use of an insecure SSL context. By default, a secure context is created, but it still allows using _create_unverified_context that doesn't validate certificates. This could lead to certificate validation bypasses."
+    type: "insecure-ssl-context"
+    enabled: true
+    error_code: "S323"
+    severity: "error"
+
+  - name: "Insecure Hashlib Functions"
+    description: "Use of insecure functions in hashlib can expose the system to vulnerabilities. Consider using more secure hash functions like SHA256 or SHA3."
+    type: "insecure-hashlib-functions"
+    enabled: true
+    error_code: "S324"
+    set.severity: "info"
+
+  - name: "Insecure Temporary File Functions"
+    description: "The use of os.tempnam() and os.tmpnam() is vulnerable to symlink attacks. Consider using tmpfile() or other safer alternatives."
+    type: "insecure-tempnam"
+    enabled: true
+    error_code: "S325"
+    severity: "error"
+
+  - name: "Insecure Telnet Module"
+    description: "A telnet-related module is being imported. Telnet is considered insecure. Use SSH or some other encrypted protocol."
+    type: "insecure-telnet-module"
+    enabled: true
+    error_code: "S401"
+    severity: "error"
+
+  - name: "Insecure FTP Module"
+    description: "A FTP-related module is being imported. FTP is considered insecure. Use SSH/SFTP/SCP or some other encrypted protocol."
+    type: "insecure-ftp-module"
+    enabled: true
+    error_code: "S402"
+    severity: "error"
+
+  - name: "Security Implications of Module"
+    description: "Consider the possible security implications associated with the {name} module. Review for any vulnerabilities."
+    type: "security-implications-module"
+    enabled: true
+    error_code: "S403"
+    severity: "error"
+
+  - name: "Security Implications of Subprocess"
+    description: "Consider possible security implications associated with the subprocess module. Use subprocess carefully as it can expose your application to shell injection attacks."
+    type: "security-implications-subprocess"
+    enabled: true
+    error_code: "S404"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S405)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-lxml-2"
+    enabled: true
+    error_code: "S405"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S406)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-elementtree-2"
+    enabled: true
+    error_code: "S406"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S407)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-minidom-2"
+    enabled: true
+    error_code: "S407"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S408)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-expat-2"
+    enabled: true
+    error_code: "S408"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S409)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called."
+    type: "unsafe-xml-parsing-sax-2"
+    enabled: true
+    error_code: "S409"
+    severity: "error"
+
+  - name: "Unsafe XML Parsing (S410)"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Replace {name} with the equivalent defusedxml package."
+    type: "unsafe-xml-parsing-pulldom-2"
+    enabled: true
+    error_code: "S410"
+    severity: "error"
+
+  - name: "XML Vulnerability Mitigation"
+    description: "Using {name} to parse untrusted XML data is known to be vulnerable to XML attacks. Use defused.xmlrpc.monkey_patch() to mitigate XML vulnerabilities."
+    type: "xml-vulnerability-mitigation"
+    enabled: true
+    error_code: "S411"
+    severity: "error"
+
+  - name: "Security Implications of Module"
+    description: "Consider possible security implications associated with the {name} module. Review for any vulnerabilities."
+    type: "security-implications-module"
+    enabled: true
+    error_code: "S412"
+    severity: "error"
+
+  - name: "Deprecated pyCrypto Library"
+    description: "The pyCrypto library and its module {name} are no longer actively maintained and have been deprecated. Consider using pyca/cryptography library."
+    type: "deprecated-crypto-library"
+    enabled: true
+    error_code: "S413"
+    severity: "error"
+
+  - name: "Insecure IPMI Module"
+    description: "An IPMI-related module is being imported. IPMI is considered insecure. Use an encrypted protocol."
+    type: "insecure-ipmi-module"
+    enabled: true
+    error_code: "S415"
+    severity: "error"
+
+  - name: "Request with No Certificate Validation"
+    description: "A request is being made with no certificate validation. This may expose the system to man-in-the-middle attacks."
+    type: "request-no-cert-validation"
+    enabled: true
+    error_code: "S501"
+    severity: "error"
+
+  - name: "SSL with Bad Version"
+    description: "SSL is being used with an unsupported or insecure version. Upgrade to a more secure version of SSL/TLS."
+    type: "ssl-bad-version"
+    enabled: true
+    error_code: "S502"
+    severity: "error"
+
+  - name: "SSL with Bad Defaults"
+    description: "SSL is being used with insecure or outdated default settings. Review and update SSL configurations."
+    type: "ssl-bad-defaults"
+    enabled: true
+    error_code: "S503"
+    severity: "error"
+
+  - name: "SSL with No Version"
+    description: "SSL is being used without specifying the version, potentially leading to insecure defaults. Ensure a secure version is specified."
+    type: "ssl-no-version"
+    enabled: true
+    error_code: "S504"
+    severity: "error"
+
+  - name: "Weak Cryptographic Key"
+    description: "A weak cryptographic key is being used, exposing the system to brute-force attacks. Use a stronger key."
+    type: "weak-cryptographic-key"
+    enabled: true
+    error_code: "S505"
+    severity: "error"
+
+  - name: "Unsafe YAML Load"
+    description: "YAML is being loaded without safety measures, which could lead to arbitrary code execution. Use safe_load() instead."
+    type: "unsafe-yaml-load"
+    enabled: true
+    error_code: "S506"
+    severity: "error"
+
+  - name: "SSH No Host Key Verification"
+    description: "SSH connections are being made without host key verification, making the system vulnerable to man-in-the-middle attacks."
+    type: "ssh-no-host-key-verification"
+    enabled: true
+    error_code: "S507"
+    severity: "error"
+
+  - name: "Insecure SNMP Version"
+    description: "An insecure version of SNMP is being used. Consider using a more secure version of SNMP or another secure protocol."
+    type: "insecure-snmp-version"
+    enabled: true
+    error_code: "S508"
+    severity: "error"
+
+  - name: "Weak SNMP Cryptography"
+    description: "SNMP is using weak cryptography for communication. Consider using stronger cryptographic algorithms."
+    type: "weak-snmp-cryptography"
+    enabled: true
+    error_code: "S509"
+    severity: "error"
+
+  - name: "Paramiko Calls"
+    description: "The paramiko library is being used, which could be vulnerable if not configured correctly. Review its use in the codebase."
+    type: "paramiko-calls"
+    enabled: true
+    error_code: "S601"
+    severity: "error"
+
+  - name: "Subprocess Popen with Shell True"
+    description: "The subprocess module's Popen method is being used with shell=True, which is a security risk if input is not sanitized."
+    type: "subprocess-popen-shell-true"
+    enabled: true
+    error_code: "S602"
+    severity: "error"
+
+  - name: "Subprocess Without Shell True"
+    description: "The subprocess module is being used without shell=True, which may lead to unexpected behavior when invoking external commands."
+    type: "subprocess-without-shell-true"
+    enabled: true
+    error_code: "S603"
+    severity: "error"
+
+  - name: "Function with Shell True"
+    description: "A function is being called with shell=True, which is a security risk if the input is not sanitized. Avoid using shell=True unless absolutely necessary."
+    type: "function-shell-true"
+    enabled: true
+    error_code: "S604"
+    severity: "error"
+
+  - name: "Start Process with Shell"
+    description: "Starting a process with shell=True could lead to security vulnerabilities such as command injection."
+    type: "start-process-shell"
+    enabled: true
+    error_code: "S605"
+    severity: "error"
+
+  - name: "Start Process with No Shell"
+    description: "Starting a process without specifying shell=True might result in unexpected behavior. Consider whether shell=True is required."
+    type: "start-process-no-shell"
+    enabled: true
+    error_code: "S606"
+    severity: "error"
+
+  - name: "Start Process with Partial Path"
+    description: "Starting a process with a partial path can expose the system to the risk of executing unintended commands. Always provide the full path to executables."
+    type: "start-process-partial-path"
+    enabled: true
+    error_code: "S607"
+    severity: "error"
+
+  - name: "Hardcoded SQL Expressions"
+    description: "SQL queries are hardcoded in the source code, which could expose the system to SQL injection attacks. Use parameterized queries or an ORM."
+    type: "hardcoded-sql-expressions"
+    enabled: true
+    error_code: "S608"
+    severity: "error"
+
+  - name: "Linux Commands Wildcard Injection"
+    description: "Linux commands are being executed with wildcard characters, which could lead to command injection vulnerabilities."
+    type: "linux-wildcard-injection"
+    enabled: true
+    error_code: "S609"
+    severity: "error"
+
+  - name: "Django Extra Used"
+    description: "The use of the 'extra' method in Django's ORM can expose the system to SQL injection vulnerabilities. Avoid using it unless necessary."
+    type: "django-extra-used"
+    enabled: true
+    error_code: "S610"
+    severity: "error"
+
+  - name: "Django RawSQL Used"
+    description: "The use of raw SQL queries in Django can expose the system to SQL injection attacks. Consider using Django ORM instead."
+    type: "django-rawsql-used"
+    enabled: true
+    error_code: "S611"
+    severity: "error"
+
+  - name: "Jinja2 Autoescape False"
+    description: "Jinja2 templates are being used with autoescape set to false, which can expose the system to cross-site scripting (XSS) vulnerabilities."
+    type: "jinja2-autoescape-false"
+    enabled: true
+    error_code: "S701"
+    severity: "error"
+
+  - name: "Use of Mako Templates"
+    description: "Mako templates are being used, which may expose the system to XSS vulnerabilities if not properly sanitized."
+    type: "use-mako-templates"
+    enabled: true
+    error_code: "S702"
+    severity: "error"
+
+  - name: "Django Mark Safe"
+    description: "Using Django's mark_safe function may expose the system to cross-site scripting vulnerabilities. Review usage and ensure proper sanitization."
+    type: "django-mark-safe"
+    enabled: true
+    error_code: "S703"
+    severity: "error"

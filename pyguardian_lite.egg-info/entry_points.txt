@@ -1,0 +1,2 @@
+[console_scripts]
+pyguardian-lt = pyguardian_lite.cli:main
